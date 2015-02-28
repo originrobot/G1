@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="us-ascii"?>
-<ArrayOfActivityData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	
-  <ActivityData>
-    <type>GATHER</type>
-    <durationInSeconds>20</durationInSeconds>
-    <description>Gather resources.</description>
-    <reward>RESOURCE</reward>
-    <rewardAmount>200</rewardAmount>
-  </ActivityData>
-  
-</ArrayOfActivityData>
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyClass>
+  <ParentClass name="none"/>
+  <Property name="UnitType" type="int16"/>
+  <Property name="Level" type="int16"/>
+  <Property name="HP" type="int32"/>
+  <Property name="MaxHP" type="int32"/>
+</PropertyClass>
