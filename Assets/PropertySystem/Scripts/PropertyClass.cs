@@ -10,6 +10,11 @@ public class PropertyClass
 	}
 	private Dictionary<string, PropertyBase> _properties = new Dictionary<string, PropertyBase>();
 
+	PropertyClass(string name)
+	{
+		_className = name;
+	}
+
 	public void addProperty(PropertyBase property)
 	{
 		if (!_properties.ContainsKey(property.name))
