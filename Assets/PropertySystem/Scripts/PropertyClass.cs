@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Xml;
 
 public class PropertyClass
 {
@@ -21,5 +23,10 @@ public class PropertyClass
 		{
 			_properties.Add(property.name, property);
 		}
+	}
+
+	public void loadFromFile(string fileName)
+	{
+		Debug.LogError("load propertyclass from: " + fileName);
 	}
 }
