@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PropertyClass>
-  <ParentClass name="none"/>
-  <Property name="UnitType" type="int16"/>
-  <Property name="Level" type="int16"/>
-  <Property name="HP" type="int32"/>
-  <Property name="MaxHP" type="int32"/>
-</PropertyClass>

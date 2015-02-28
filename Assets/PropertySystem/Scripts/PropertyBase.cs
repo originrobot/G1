@@ -5,7 +5,6 @@ public class PropertyBase
 	public string name
 	{
 		get { return _name; }
-		set { _name = value; }
 	}
 
 	private System.Type _type;
@@ -13,5 +12,10 @@ public class PropertyBase
 	{
 		get { return _type; }
 		set { _type = value; }
+	}
+
+	public PropertyBase(string inName)
+	{
+		_name = inName;
 	}
 }

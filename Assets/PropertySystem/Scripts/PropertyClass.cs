@@ -11,8 +11,12 @@ public class PropertyClass
 		set { _className = value; }
 	}
 	private Dictionary<string, PropertyBase> _properties = new Dictionary<string, PropertyBase>();
+	public Dictionary<string, PropertyBase> properties
+	{
+		get { return _properties; }
+	}
 
-	PropertyClass(string name)
+	public PropertyClass(string name)
 	{
 		_className = name;
 	}
@@ -23,10 +27,5 @@ public class PropertyClass
 		{
 			_properties.Add(property.name, property);
 		}
-	}
-
-	public void loadFromFile(string fileName)
-	{
-		Debug.LogError("load propertyclass from: " + fileName);
 	}
 }
