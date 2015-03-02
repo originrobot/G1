@@ -7,7 +7,7 @@ public class PropertyBase
 		get { return _name; }
 	}
 
-	private System.Type _type;
+	protected System.Type _type;
 	public System.Type type
 	{
 		get { return _type; }
