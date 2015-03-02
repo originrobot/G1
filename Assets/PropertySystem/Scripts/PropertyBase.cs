@@ -18,4 +18,9 @@ public class PropertyBase
 	{
 		_name = inName;
 	}
+
+	public virtual PropertyBase clone()
+	{
+		return new PropertyBase(_name);
+	}
 }

@@ -28,4 +28,16 @@ public class PropertyClass
 			_properties.Add(property.name, property);
 		}
 	}
+
+	public Dictionary<string, PropertyBase> cloneProperties()
+	{
+		Dictionary<string, PropertyBase> results = new Dictionary<string, PropertyBase>();
+		foreach (PropertyBase prop in _properties.Values)
+		{
+			PropertyBase clonedProp = prop.clone();
+			results.Add(clonedProp.name, clonedProp);
+		}
+
+		return results;
+	}
 }

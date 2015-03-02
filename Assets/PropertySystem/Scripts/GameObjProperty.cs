@@ -18,4 +18,9 @@ public class GameObjProperty : PropertyBase
 	{
 		_type = typeof(GameObject);
 	}
+
+	public override PropertyBase clone()
+	{
+		return new GameObjProperty(name);
+	}
 }

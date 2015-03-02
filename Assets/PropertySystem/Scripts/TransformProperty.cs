@@ -18,4 +18,9 @@ public class TransformProperty : PropertyBase
 	{
 		_type = typeof(Transform);
 	}
+
+	public override PropertyBase clone()
+	{
+		return new TransformProperty(name);
+	}
 }

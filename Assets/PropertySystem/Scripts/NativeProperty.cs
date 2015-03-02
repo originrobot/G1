@@ -14,4 +14,9 @@ public class NativeProperty<NativeType> : PropertyBase
 	{
 		_type = typeof(NativeType);
 	}
+
+	public override PropertyBase clone()
+	{
+		return new NativeProperty<NativeType>(name);
+	}
 }

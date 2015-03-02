@@ -7,10 +7,17 @@ public class GlobalManager : MonoBehaviour
 {
 	private bool _propClassesInited = false;
 	private Dictionary<string, PropertyClass> _propertyClasses = new Dictionary<string, PropertyClass>();
+	private static GlobalManager _instance = null;
 
 	void Awake() 
 	{
 		DontDestroyOnLoad(transform.gameObject);
+		_instance = this;
+	}
+
+	public static GlobalManager instance
+	{
+		get { return _instance; }
 	}
 
 	void Start()
@@ -20,6 +27,14 @@ public class GlobalManager : MonoBehaviour
 	
 	void Update() 
 	{
+	}
+
+	public PropertyClass getPropertyClass(string className)
+	{
+		if (!_propClassesInited) return null;
+
+		if (_propertyClasses.ContainsKey(className)) return _propertyClasses[className];
+		else return null;
 	}
 
 	private IEnumerator coInitPropertyClasses()
