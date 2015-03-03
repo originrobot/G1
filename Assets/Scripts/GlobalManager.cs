@@ -72,8 +72,18 @@ public class GlobalManager : MonoBehaviour
 					}
 					else if (child.Name == "Property") // new property
 					{
-						PropertyBase newProperty = new PropertyBase(child.Attributes["name"].InnerText);
-						newClass.addProperty(newProperty);
+						string propType = child.Attributes["type"].InnerText;
+						PropertyBase newProperty = null;
+
+						if (propType == "int32") newProperty = new NativeProperty<int>(child.Attributes["name"].InnerText);
+						else if(propType == "int16") newProperty = new NativeProperty<short>(child.Attributes["name"].InnerText);
+						else if(propType == "float") newProperty = new NativeProperty<float>(child.Attributes["name"].InnerText);
+						else if(propType == "string") newProperty = new NativeProperty<string>(child.Attributes["name"].InnerText);
+						else if(propType == "bool") newProperty = new NativeProperty<bool>(child.Attributes["name"].InnerText);
+						else if(propType == "go") newProperty = new GameObjProperty(child.Attributes["name"].InnerText);
+						else if(propType == "transform") newProperty = new TransformProperty(child.Attributes["name"].InnerText);
+
+						if (newProperty != null) newClass.addProperty(newProperty);
 					}
 				}
 
