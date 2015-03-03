@@ -23,4 +23,13 @@ public class PropertyBase
 	{
 		return new PropertyBase(_name);
 	}
+
+	public virtual string valueToString()
+	{
+		return "";
+	}
+
+	public virtual void valueFromString(string valueString)
+	{
+	}
 }
