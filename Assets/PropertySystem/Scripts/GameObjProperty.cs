@@ -23,4 +23,23 @@ public class GameObjProperty : PropertyBase
 	{
 		return new GameObjProperty(name);
 	}
+
+	public override string valueToString()
+	{
+		if (_gameObject) 
+		{
+			return _gameObject.ToString();
+		}
+		else
+		{
+			return "";
+		}
+	}
+	
+	public override void valueFromString(string valueString)
+	{
+		if (_gameObject)
+		{
+		}
+	}
 }

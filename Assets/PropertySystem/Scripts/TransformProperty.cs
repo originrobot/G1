@@ -23,4 +23,23 @@ public class TransformProperty : PropertyBase
 	{
 		return new TransformProperty(name);
 	}
+
+	public override string valueToString()
+	{
+		if (_transform) 
+		{
+			return _transform.ToString();
+		}
+		else
+		{
+			return "";
+		}
+	}
+	
+	public override void valueFromString(string valueString)
+	{
+		if (_transform)
+		{
+		}
+	}
 }
