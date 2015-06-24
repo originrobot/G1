@@ -21,7 +21,8 @@ namespace HutongGames.PlayMaker.Actions
         [Tooltip("Set the value of the array at the specified index.")] 
         public FsmVar value;
 
-        [Tooltip("Repeat every frame while the state is active.")] public bool everyFrame;
+        [Tooltip("Repeat every frame while the state is active.")] 
+        public bool everyFrame;
 
         [ActionSection("Events")] 
 

@@ -7,6 +7,7 @@ using UnityEngine;
 using HutongGames.PlayMaker;
 using HutongGames.PlayMakerEditor;
 using System.Collections.Generic;
+using HutongGames.Editor;
 
 /// <summary>
 /// Custom inspector for PlayMakerFSM
@@ -306,6 +307,7 @@ public class FsmComponentInspector : Editor
         }
         else
         {
+            EditorWindow.FocusWindowIfItsOpen<FsmEditorWindow>();
             FsmEditor.SelectFsm(fsmComponent.FsmTemplate == null ? fsmComponent.Fsm : fsmComponent.FsmTemplate.fsm);
         }
     }
@@ -355,12 +357,11 @@ public class FsmComponentInspector : Editor
         {
             return; // don't want to lose overridden variables
         }
-
+        
+        UndoUtility.RegisterUndo(fsmComponent, "PlayMaker : Set FSM Template");
         fsmComponent.SetFsmTemplate(template);
         fsmTemplate = template;
-
         BuildFsmVariableList();
-
         EditorUtility.SetDirty(fsmComponent);
 
         FsmEditor.RefreshInspector(); // Keep Playmaker Editor in sync

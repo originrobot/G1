@@ -8,6 +8,7 @@ using HutongGames.PlayMakerEditor;
 
 public class PlayMakerUpgradeTools
 {
+    /*
     // Change MenuRoot to move the Playmaker Menu
     // E.g., MenuRoot = "Plugins/PlayMaker/"
     private const string MenuRoot = "PlayMaker/";
@@ -86,20 +87,6 @@ public class PlayMakerUpgradeTools
 
         FsmEditor.RebuildFsmList();
     }
-
-    /*
-    private static void FindAllScenes()
-    {
-        Debug.Log("Finding all scenes...");
-
-        var searchDirectory = new DirectoryInfo(Application.dataPath);
-        var assetFiles = searchDirectory.GetFiles("*.asset", SearchOption.AllDirectories);
-
-        foreach (var file in assetFiles)
-        {
-            //var obj = AssetDatabase.
-        }
-    }*/
-
+     * */
 }
 

@@ -311,12 +311,13 @@ static class PlayMakerMainMenu
 	{
 		AssetStore.Open("1z");
 	}*/
-
+    
+    /* Moved to WelcomeWindow.cs
     [MenuItem(MenuRoot + "Upgrade Guide", false, 46)]
     public static void OpenUpgradeGuide()
     {
         EditorWindow.GetWindow<PlayMakerUpgradeGuide>(true);
-    }
+    }*/
 
 	[MenuItem(MenuRoot + "About PlayMaker...", false, 47)]
 	public static void OpenAboutWindow()
@@ -334,17 +335,22 @@ static class PlayMakerMainMenu
         Application.OpenURL("https://hutonggames.fogbugz.com/default.asp?W714");
     }
 
+#if !UNITY_5
+
+    /* No longer needed...
     [MenuItem(MenuRoot + "Addons/BlackBerry Add-on")]
     public static void GetBlackBerryAddon()
     {
         UnityEditorInternal.AssetStore.Open("content/10530");
-    }
+    }*/
 
     [MenuItem(MenuRoot + "Addons/Windows Phone 8 Add-on")]
     public static void GetWindowsPhone8Addon()
     {
         UnityEditorInternal.AssetStore.Open("content/10602");
     }
+
+#endif
 
     #endregion
 }

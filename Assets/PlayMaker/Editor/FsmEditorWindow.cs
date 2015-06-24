@@ -30,10 +30,11 @@ namespace HutongGames.PlayMakerEditor
                     GetWindow<PlayMakerWelcomeWindow>(true);
                 }
 
+                /* Moved to WelcomeWindow.cs
                 if (EditorPrefs.GetBool(EditorPrefStrings.ShowUpgradeGuide, true))
                 {
                     GetWindow<PlayMakerUpgradeGuide>(true);
-                }
+                }*/
             }
         }
 
@@ -131,9 +132,11 @@ namespace HutongGames.PlayMakerEditor
             {
                 switch (Event.current.commandName)
                 {
+                    /* replaced with Undo.undoRedoPerformed callback added in Unity 4.3
                     case "UndoRedoPerformed":
                         FsmEditor.UndoRedoPerformed();
                         break;
+                    */
 
                     case "Cut":
                         FsmEditor.Cut();

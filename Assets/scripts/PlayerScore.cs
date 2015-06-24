@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerScore : MonoBehaviour
@@ -62,7 +63,7 @@ public class PlayerScore : MonoBehaviour
 			if (previousHostScore != currentHostScore) 
 			{
 				previousHostScore = currentHostScore;
-				gameObject.GetComponent<UILabel>().text = currentHostScore.ToString();
+				gameObject.GetComponent<Text>().text = currentHostScore.ToString();
 			}
 		}
 		else
@@ -70,7 +71,7 @@ public class PlayerScore : MonoBehaviour
 			if (previousClientScore != currentClientScore) 
 			{
 				previousClientScore = currentClientScore;
-				gameObject.GetComponent<UILabel>().text = currentClientScore.ToString();
+				gameObject.GetComponent<Text>().text = currentClientScore.ToString();
 			}
 		}
 	}

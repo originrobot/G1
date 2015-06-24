@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+/* Moved to WelcomeWindow.cs
+
 namespace HutongGames.PlayMakerEditor
 {
     /// <summary>
@@ -72,3 +74,4 @@ namespace HutongGames.PlayMakerEditor
         }
     }
 }
+*/

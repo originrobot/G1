@@ -75,7 +75,7 @@ namespace HutongGames.PlayMaker.Actions
 			if (nextItemIndex >= array.Length)
 			{
 				nextItemIndex = 0;
-				currentIndex.Value = nextItemIndex;
+				currentIndex.Value = array.Length -1;
 				Fsm.Event(finishedEvent);
 				return;
 			}
@@ -91,7 +91,7 @@ namespace HutongGames.PlayMaker.Actions
             if (nextItemIndex >= array.Length)
 			{
 				nextItemIndex = 0;
-				currentIndex.Value = nextItemIndex;
+				currentIndex.Value = array.Length-1;
 				Fsm.Event(finishedEvent);
 				return;
 			}
@@ -99,7 +99,7 @@ namespace HutongGames.PlayMaker.Actions
 			if (endIndex.Value>0 && nextItemIndex>= endIndex.Value)
 			{
 				nextItemIndex = 0;
-				currentIndex.Value = nextItemIndex;
+				currentIndex.Value = endIndex.Value;
 				Fsm.Event(finishedEvent);
 				return;
 			}
@@ -107,7 +107,7 @@ namespace HutongGames.PlayMaker.Actions
 			// iterate the next child
 			nextItemIndex++;
 
-			currentIndex.Value = nextItemIndex;
+			currentIndex.Value = nextItemIndex -1 ;
 
 			if (loopEvent != null)
 			{

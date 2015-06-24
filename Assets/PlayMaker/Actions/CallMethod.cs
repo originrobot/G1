@@ -41,6 +41,15 @@ namespace HutongGames.PlayMaker.Actions
         private object[] parametersArray;
         private string errorString;
 
+        public override void Reset()
+        {
+            behaviour = null;
+            methodName = null;
+            parameters = null;
+            storeResult = null;
+            everyFrame = false;
+        }
+
         public override void OnEnter()
         {
             parametersArray = new object[parameters.Length];
@@ -92,7 +101,11 @@ namespace HutongGames.PlayMaker.Actions
 
                 result = cachedMethodInfo.Invoke(cachedBehaviour.Value, parametersArray);
             }
-            storeResult.SetValue(result);
+
+            if (!storeResult.IsNone)
+            {
+                storeResult.SetValue(result);
+            }
         }
 
         // TODO: Move tests to helper function in core

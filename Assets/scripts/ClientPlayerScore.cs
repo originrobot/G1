@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ClientPlayerScore : MonoBehaviour
@@ -43,7 +44,7 @@ public class ClientPlayerScore : MonoBehaviour
 		if (previousClientScore != currentClientScore) 
 		{
 			previousClientScore = currentClientScore;
-			gameObject.GetComponent<UILabel>().text = currentClientScore.ToString();
+			gameObject.GetComponent<Text>().text = currentClientScore.ToString();
 		}
 	}
 }

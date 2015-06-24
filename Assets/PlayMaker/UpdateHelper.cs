@@ -8,13 +8,31 @@ using UnityEditor;
 
 namespace HutongGames.PlayMaker
 {
+    /// <summary>
+    /// Playmaker runtime code can't call unity editor code
+    /// This class is a workaround, allowing runtime code to call EditorUtility.SetDirty
+    /// </summary>
     public class UpdateHelper
     {
         public static void SetDirty(Fsm fsm)
         {
 #if UNITY_EDITOR
+
+            if (fsm == null || fsm.OwnerObject == null) return;
+            
             //Debug.Log("SetDirty: " + FsmUtility.GetFullFsmLabel(fsm));
-            EditorUtility.SetDirty(fsm.OwnerObject);
+            
+            fsm.Preprocessed = false; // force pre-process to run again
+
+            if (fsm.UsedInTemplate != null)
+            {
+                EditorUtility.SetDirty(fsm.UsedInTemplate);
+            }
+            else if (fsm.Owner != null)
+            {
+                EditorUtility.SetDirty(fsm.Owner);
+            }
+
 #endif
         }
     }

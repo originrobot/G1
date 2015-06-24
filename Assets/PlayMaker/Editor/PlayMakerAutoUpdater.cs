@@ -71,7 +71,7 @@ namespace HutongGames.PlayMakerEditor
         static bool CheckRequirements()
         {
             // If project doesn't have this folder user hasn't updated Playmaker for Unity5
-            if (!AssetDatabase.IsValidFolder("Assets/Plugins/PlayMaker"))
+            if (!EditorApp.IsSourceCodeVersion && !AssetDatabase.IsValidFolder("Assets/Plugins/PlayMaker"))
             {
                 EditorUtility.DisplayDialog("PlayMaker AutoUpdater",
                     "Please import Playmaker for Unity 5." +
