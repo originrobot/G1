@@ -66,8 +66,8 @@ public class GuessMineParse : MonoBehaviour
 				
 				fsmInterface.FsmVariables.GetFsmArray("IDArray").Set (idIndexArray,ID);
 				fsmInterface.FsmVariables.GetFsmArray("answerArray").Set (idIndexArray,answer);
-				fsmInterface.FsmVariables.GetFsmArray("yesArray").Set (idIndexArray,yes);
-				fsmInterface.FsmVariables.GetFsmArray("yesArray").Set (idIndexArray,hintT1);
+				fsmInterface.FsmVariables.GetFsmArray("yesArray").Set (idIndexArray,yes + "," + hintT1);
+//				fsmInterface.FsmVariables.GetFsmArray("yesArray").Set (idIndexArray,hintT1);
 
 				idIndexArray = idIndexArray + 1;
 			}
