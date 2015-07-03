@@ -12,15 +12,28 @@ public class GuessMineParse : MonoBehaviour
 	private PlayMakerFSM fsmInterface;
 	public string fsmInterfaceName = "FsmScriptInterface";
 	public int ID;
+	public string language;
 	public string answer;
 	public string yes;
+	public string hintT1;
 	public int idIndexArray;
 	public bool parseComplete = false;
 
 	
-	
+	public void English ()
+	{
+		language = "English";
+	}
+
+	public void Chinese ()
+	{
+		language = "Chinese";
+	}
+
 	// Use this for initialization
-	void Start () 
+
+
+	public void StartButton () 
 	{
 		PlayMakerFSM[] temp = GetComponents<PlayMakerFSM> ();
 		foreach (PlayMakerFSM fsm in temp) 
@@ -31,7 +44,7 @@ public class GuessMineParse : MonoBehaviour
 			}
 		}
 		Debug.Log("put whatever u like here");
-		query = new ParseQuery<ParseObject>("DataGuessMine");
+		query = new ParseQuery<ParseObject>("DataGuessMine" + language);
 		query.FindAsync().ContinueWith(t =>
 		{
 			result = t.Result;
@@ -43,6 +56,8 @@ public class GuessMineParse : MonoBehaviour
 				Debug.Log(obj.Get<string>("Answer"));
 				yes = obj.Get<string>("Yes");
 				Debug.Log(obj.Get<string>("Yes"));
+				hintT1 = obj.Get<string>("HintT1");
+				Debug.Log(obj.Get<string>("HintT1"));
 				Debug.Log("put whatever u like here");
 				
 				fsmInterface.FsmVariables.GetFsmArray("IDArray").Resize(idIndexArray + 1);
@@ -52,6 +67,8 @@ public class GuessMineParse : MonoBehaviour
 				fsmInterface.FsmVariables.GetFsmArray("IDArray").Set (idIndexArray,ID);
 				fsmInterface.FsmVariables.GetFsmArray("answerArray").Set (idIndexArray,answer);
 				fsmInterface.FsmVariables.GetFsmArray("yesArray").Set (idIndexArray,yes);
+				fsmInterface.FsmVariables.GetFsmArray("yesArray").Set (idIndexArray,hintT1);
+
 				idIndexArray = idIndexArray + 1;
 			}
 			parseComplete = true;
