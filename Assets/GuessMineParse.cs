@@ -43,6 +43,7 @@ public class GuessMineParse : MonoBehaviour
 				fsmInterface = fsm;
 			}
 		}
+		Debug.Log (fsmInterface);
 		Debug.Log("put whatever u like here");
 		query = new ParseQuery<ParseObject>("DataGuessMine" + language);
 		query.FindAsync().ContinueWith(t =>
